@@ -111,6 +111,7 @@ class HelloTriangleApplication {
         createSurface();
         pickPhysicalDevice();
         createLogicalDevice();
+        createSwapChain();
     }
 
     void mainLoop() {
@@ -494,6 +495,7 @@ class HelloTriangleApplication {
         createInfo.sType = VK_STRUCTURE_TYPE_SWAPCHAIN_CREATE_INFO_KHR;
         createInfo.surface = surface;
         createInfo.minImageCount = imageCount;
+        createInfo.imageFormat = surfaceFormat.format;
         createInfo.imageColorSpace = surfaceFormat.colorSpace;
         createInfo.imageExtent = extent;
         createInfo.imageArrayLayers = 1;
